@@ -1,13 +1,29 @@
 from django.shortcuts import render, redirect
-from .models import Donor
+from .models import Cause, ContactMessage
 from django.contrib import messages
 
+def home(request):
+    causes = Cause.objects.all()
+    return render(request, 'index.html', {'causes': causes})
+
+def about(request):
+    return render(request, 'about.html')
+
 def donate(request):
-    if request.method == 'POST':
-        name = request.POST['name']
-        email = request.POST['email']
-        amount = request.POST['amount']
-        Donor.objects.create(name=name, email=email, amount=amount)
-        messages.success(request, "Thank you for your donation!")
-        return redirect('home')
     return render(request, 'donate.html')
+
+def causes(request):
+    causes = Cause.objects.all()
+    return render(request, 'causes.html', {'causes': causes})
+
+def contact(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        message = request.POST.get("message")
+
+        ContactMessage.objects.create(name=name, email=email, message=message)
+        messages.success(request, "Message sent successfully!")
+        return redirect("contact")
+
+    return render(request, 'contact.html')
