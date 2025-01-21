@@ -1,1 +1,6 @@
 Django
+python-dotenv
+pillow
+gunicorn
+whitenoise
+# psycopg2-binary
