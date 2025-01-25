@@ -22,7 +22,7 @@ def event(request):
     return render(request, 'event.html')
 
 def blog_single(request):
-    return render(request, "{% url 'blog_single' %}")
+    return render(request, "blog-single.html")
 
 def causes(request):
     causes = Cause.objects.all()
