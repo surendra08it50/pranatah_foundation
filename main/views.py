@@ -58,6 +58,7 @@ def volunteer_view(request):
     else:
         form = VolunteerForm()
     return render(request, "volunteer.html", {"form": form})
+    # return render(request, "donate.html", {"form": form})
 
 
 def volunteer_success(request):
