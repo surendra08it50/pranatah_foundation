@@ -56,3 +56,9 @@ def volunteer_view(request):
 
 def volunteer_success(request):
     return render(request, "volunteer_success.html")
+
+from .models import Volunteer  # Import Volunteer model
+
+def volunteer_list(request):
+    volunteers = Volunteer.objects.all()  # Fetch all volunteers from the database
+    return render(request, "volunteer_list.html", {"volunteers": volunteers})

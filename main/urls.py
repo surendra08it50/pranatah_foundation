@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import volunteer_view, volunteer_success
+from .views import volunteer_view, volunteer_success, volunteer_list
 
 urlpatterns = [
     path("", views.home, name="home"),
@@ -14,6 +14,7 @@ urlpatterns = [
     path("blog-single/", views.blog_single, name="blog_single"),
     path("volunteer/", volunteer_view, name="volunteer_form"),
     path("volunteer/success/", volunteer_success, name="volunteer_success"),
+    path("volunteers/", volunteer_list, name="volunteer_list"),
 ]
 
 # urlpatterns += [
