@@ -10,9 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key")
 
 # DEBUG = os.getenv("DEBUG", "False") == "True"
-# DEBUG = 
+DEBUG = True
 
-DEBUG = False  # Ensure this is False in production
+# DEBUG = False  # Ensure this is False in production
 
 # ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 ALLOWED_HOSTS = ['pranatah-foundation.onrender.com', 'localhost', '127.0.0.1']

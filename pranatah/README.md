@@ -42,3 +42,6 @@ pranatah/
 5. Open Website
     Go to http://127.0.0.1:8000/ 🎉
 
+see all volunteers
+http://127.0.0.1:8000/volunteers/    
+
