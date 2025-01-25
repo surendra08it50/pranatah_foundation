@@ -12,6 +12,16 @@ def about(request):
 def donate(request):
     return render(request, 'donate.html')
 
+def blog(request):
+    return render(request, 'blog.html')
+
+def gallery(request):
+    return render(request, 'gallery.html')
+
+def event(request):
+    return render(request, 'event.html')
+
+
 def causes(request):
     causes = Cause.objects.all()
     return render(request, 'causes.html', {'causes': causes})
