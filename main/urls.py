@@ -10,4 +10,5 @@ urlpatterns = [
     path("gallery/", views.gallery, name="gallery"),
     path("event/", views.event, name="event"),
     path("contact/", views.contact, name="contact"),
+    path("blog-single/", views.blog_single, name="blog_single"),
 ]

@@ -4,14 +4,14 @@ pranatah/
 │   ├── static/         # Static files (CSS, JS, images)
 │   ├── templates/      # HTML templates
 │   │   ├── about.html
-│   │   ├── blog-single.html
+│   │   ├── {% url 'blog_single' %}
 │   │   ├── blog.html
 │   │   ├── causes.html
 │   │   ├── contact.html
 │   │   ├── donate.html
 │   │   ├── event.html
 │   │   ├── gallery.html
-│   │   ├── index.html
+│   │   ├── {% url 'home' %}
 │   ├── __init__.py
 │   ├── admin.py
 │   ├── apps.py
