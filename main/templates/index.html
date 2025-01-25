@@ -538,11 +538,20 @@
               <h2 class="ftco-heading-2">Site Links</h2>
               <ul class="list-unstyled">
                 <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="#" class="py-2 d-block">About</a></li>
-                <li><a href="#" class="py-2 d-block">Donate</a></li>
-                <li><a href="#" class="py-2 d-block">Causes</a></li>
-                <li><a href="#" class="py-2 d-block">Event</a></li>
-                <li><a href="#" class="py-2 d-block">Blog</a></li>
+                <li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>
+                <li><a href="{% url 'donate' %}" class="py-2 d-block">Donate</a></li>
+                <li><a href="{% url 'causes' %}" class="py-2 d-block">Causes</a></li>
+                <li><a href="{% url 'event' %}" class="py-2 d-block">Event</a></li>
+                <li><a href="{% url 'blog' %}" class="py-2 d-block">Blog</a></li>
+
+                {% comment %} <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{% url 'causes' %}" class="nav-link">Causes</a></li>
+                <li class="nav-item"><a href="{% url 'donate' %}" class="nav-link">Donate</a></li>
+                <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="{% url 'event' %}" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li> {% endcomment %}
               </ul>
             </div>
           </div>
