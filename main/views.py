@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Cause, ContactMessage
 from django.contrib import messages
+from .forms import VolunteerForm
 
 def home(request):
     causes = Cause.objects.all()
@@ -39,3 +40,19 @@ def contact(request):
         return redirect("contact")
 
     return render(request, 'contact.html')
+
+
+
+def volunteer_view(request):
+    if request.method == "POST":
+        form = VolunteerForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("volunteer_success")  # Redirect to a success page
+    else:
+        form = VolunteerForm()
+    return render(request, "volunteer.html", {"form": form})
+
+
+def volunteer_success(request):
+    return render(request, "volunteer_success.html")

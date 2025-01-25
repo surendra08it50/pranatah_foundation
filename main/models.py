@@ -24,3 +24,11 @@ class ContactMessage(models.Model):
 
     def __str__(self):
         return f"Message from {self.name}"
+
+class Volunteer(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(unique=True)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name

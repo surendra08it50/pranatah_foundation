@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import volunteer_view, volunteer_success
 
 urlpatterns = [
     path("", views.home, name="home"),
@@ -11,4 +12,10 @@ urlpatterns = [
     path("event/", views.event, name="event"),
     path("contact/", views.contact, name="contact"),
     path("blog-single/", views.blog_single, name="blog_single"),
+    path("volunteer/", volunteer_view, name="volunteer_form"),
+    path("volunteer/success/", volunteer_success, name="volunteer_success"),
 ]
+
+# urlpatterns += [
+#     path("volunteer/success/", volunteer_success, name="volunteer_success"),
+# ]
