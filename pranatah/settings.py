@@ -10,7 +10,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY", "your-secret-key")
 
 # DEBUG = os.getenv("DEBUG", "False") == "True"
-DEBUG = True
+# DEBUG = 
+
+DEBUG = False  # Ensure this is False in production
 
 # ALLOWED_HOSTS = ["127.0.0.1", "localhost"]
 ALLOWED_HOSTS = ['pranatah-foundation.onrender.com', 'localhost', '127.0.0.1']
@@ -25,8 +27,19 @@ INSTALLED_APPS = [
     "main",
 ]
 
+# MIDDLEWARE = [
+#     "django.middleware.security.SecurityMiddleware",
+#     "django.contrib.sessions.middleware.SessionMiddleware",
+#     "django.middleware.common.CommonMiddleware",
+#     "django.middleware.csrf.CsrfViewMiddleware",
+#     "django.contrib.auth.middleware.AuthenticationMiddleware",
+#     "django.contrib.messages.middleware.MessageMiddleware",
+#     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+# ]
+
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",  # Add this line
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -63,6 +76,15 @@ DATABASES = {
 }
 
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "main/static"]
+# STATICFILES_DIRS = [BASE_DIR / "main/static"]
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "main/static"),  # Adjust if needed
+]
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+
+## Add this at the end of settings.py:
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
