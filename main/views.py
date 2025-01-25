@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Cause, ContactMessage
 from django.contrib import messages
 from .forms import VolunteerForm
+from .models import Volunteer  # Import Volunteer model
 
 def home(request):
     causes = Cause.objects.all()
@@ -28,6 +29,11 @@ def blog_single(request):
 def causes(request):
     causes = Cause.objects.all()
     return render(request, 'causes.html', {'causes': causes})
+
+def volunteer_list(request):
+    volunteers = Volunteer.objects.all()  # Fetch all volunteers from the database
+    return render(request, "volunteer_list.html", {"volunteers": volunteers})
+
 
 def contact(request):
     if request.method == "POST":
@@ -57,8 +63,5 @@ def volunteer_view(request):
 def volunteer_success(request):
     return render(request, "volunteer_success.html")
 
-from .models import Volunteer  # Import Volunteer model
 
-def volunteer_list(request):
-    volunteers = Volunteer.objects.all()  # Fetch all volunteers from the database
-    return render(request, "volunteer_list.html", {"volunteers": volunteers})
+
