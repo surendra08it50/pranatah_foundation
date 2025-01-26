@@ -57,13 +57,14 @@ def volunteer_view(request):
         form = VolunteerForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("volunteer_success")  # Redirect to a success page
+            messages.success(request, 'You have successfully registered as a volunteer!')
+            return redirect("volunteer_register")  # Redirect to a success page
         else:
             print(form.errors)
+            messages.error(request, 'There was an error with your registration. Please try again.')
     else:
         form = VolunteerForm()
-    return render(request, "volunteer.html", {"form": form})
-    # return render(request, "donate.html", {"form": form})
+    return render(request, "volunteer_register.html", {"form": form})
 
 
 def volunteer_success(request):
