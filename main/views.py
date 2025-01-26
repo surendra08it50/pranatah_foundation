@@ -55,6 +55,8 @@ def volunteer_view(request):
         if form.is_valid():
             form.save()
             return redirect("volunteer_success")  # Redirect to a success page
+        else:
+            print(form.errors)
     else:
         form = VolunteerForm()
     return render(request, "volunteer.html", {"form": form})
