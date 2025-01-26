@@ -26,6 +26,9 @@ def event(request):
 def blog_single(request):
     return render(request, "blog-single.html")
 
+def volunteer_register(request):
+    return render(request, "volunteer_register.html")
+
 def causes(request):
     causes = Cause.objects.all()
     return render(request, 'causes.html', {'causes': causes})
