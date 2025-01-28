@@ -151,14 +151,38 @@
         		</div>
         	</div>
         </div>
-        <form method="POST">
-          {% csrf_token %}
-          <input type="text" name="name" placeholder="Your Name" required>
-          <input type="email" name="email" placeholder="Your Email" required>
-          <input type="number" name="amount" placeholder="Donation Amount" required>
-          <button type="submit">Donate</button>
-      </form>
-      
+        <h2>Make a Donation</h2>
+    
+		<form method="POST" action="{% url 'donate' %}">
+			{% csrf_token %}
+			<input type="text" name="name" placeholder="Your Name" required>
+			<input type="email" name="email" placeholder="Your Email" required>
+			<input type="number" name="amount" placeholder="Donation Amount" required>
+			<button type="submit">Donate</button>
+		</form>
+		
+		<h2>Recent Donations</h2>
+    <div>
+        {% for donor in donors %}
+            <p><strong>{{ donor.name }}</strong> donated <strong>${{ donor.amount }}</strong></p>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination">
+        {% if donors.has_previous %}
+            <a href="?page=1">&laquo; First</a>
+            <a href="?page={{ donors.previous_page_number }}">Previous</a>
+        {% endif %}
+
+        <span>Page {{ donors.number }} of {{ donors.paginator.num_pages }}</span>
+
+        {% if donors.has_next %}
+            <a href="?page={{ donors.next_page_number }}">Next</a>
+            <a href="?page={{ donors.paginator.num_pages }}">Last &raquo;</a>
+        {% endif %}
+    </div>
+	
         <div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">

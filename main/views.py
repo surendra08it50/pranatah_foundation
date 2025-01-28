@@ -2,7 +2,8 @@ from django.shortcuts import render, redirect
 from .models import Cause, ContactMessage
 from django.contrib import messages
 from .forms import VolunteerForm
-from .models import Volunteer  # Import Volunteer model
+from .models import Volunteer, Donation  # Import Volunteer model
+from django.core.paginator import Paginator
 
 def home(request):
     causes = Cause.objects.all()
@@ -72,3 +73,20 @@ def volunteer_success(request):
 
 
 
+def donate_view(request):
+    if request.method == "POST":
+        name = request.POST.get("name")
+        email = request.POST.get("email")
+        amount = request.POST.get("amount")
+
+        # Save to database
+        Donation.objects.create(name=name, email=email, amount=amount)
+        return redirect("donate")
+
+    # Fetch all donations with pagination (6 per page)
+    donations = Donation.objects.all().order_by("-id")  
+    paginator = Paginator(donations, 6)  
+    page_number = request.GET.get("page")
+    donors = paginator.get_page(page_number)
+
+    return render(request, "donate.html", {"donors": donors})
