@@ -164,22 +164,22 @@
 		<h2>Recent Donations</h2>
     <div>
         {% for donor in donors %}
-            <p><strong>{{ donor.name }}</strong> donated <strong>${{ donor.amount }}</strong></p>
+            <p><strong>{{ donor.name }}</strong> donated <strong>${{ donor.amount }}</strong> at <strong> {{ donor.created_at }}</strong></p>
         {% endfor %}
     </div>
 
     <!-- Pagination -->
     <div class="pagination">
         {% if donors.has_previous %}
-            <a href="?page=1">&laquo; First</a>
-            <a href="?page={{ donors.previous_page_number }}">Previous</a>
+            <a href="?page=1">&laquo; First&nbsp;&nbsp;</a>
+            <a href="?page={{ donors.previous_page_number }}">Previous &nbsp;&nbsp;</a>
         {% endif %}
 
-        <span>Page {{ donors.number }} of {{ donors.paginator.num_pages }}</span>
+        <span> Page {{ donors.number }} of {{ donors.paginator.num_pages }}</span>
 
         {% if donors.has_next %}
-            <a href="?page={{ donors.next_page_number }}">Next</a>
-            <a href="?page={{ donors.paginator.num_pages }}">Last &raquo;</a>
+            <a href="?page={{ donors.next_page_number }}">&nbsp;&nbsp; Next &nbsp;&nbsp;</a>
+            <a href="?page={{ donors.paginator.num_pages }}"> Last &raquo;</a>
         {% endif %}
     </div>
 	

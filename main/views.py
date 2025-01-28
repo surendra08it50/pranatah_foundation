@@ -85,7 +85,7 @@ def donate_view(request):
 
     # Fetch all donations with pagination (6 per page)
     donations = Donation.objects.all().order_by("-id")  
-    paginator = Paginator(donations, 6)  
+    paginator = Paginator(donations, 2)  
     page_number = request.GET.get("page")
     donors = paginator.get_page(page_number)
 
