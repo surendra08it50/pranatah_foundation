@@ -38,7 +38,7 @@ def volunteer_list(request):
     # volunteers = Volunteer.objects.all()  # Fetch all volunteers from the database
     # return render(request, "volunteer_list.html", {"volunteers": volunteers})
     volunteers = Volunteer.objects.all()  # Get all volunteers
-    paginator = Paginator(volunteers, 2)  # Show 5 volunteers per page
+    paginator = Paginator(volunteers, 4)  # Show 5 volunteers per page
 
     page_number = request.GET.get('page')  # Get page number from URL
     page_obj = paginator.get_page(page_number)  # Get the page object
@@ -92,7 +92,7 @@ def donate_view(request):
 
     # Fetch all donations with pagination (6 per page)
     donations = Donation.objects.all().order_by("-id")  
-    paginator = Paginator(donations, 2)  
+    paginator = Paginator(donations, 3)  
     page_number = request.GET.get("page")
     donors = paginator.get_page(page_number)
 
