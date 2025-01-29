@@ -35,8 +35,15 @@ def causes(request):
     return render(request, 'causes.html', {'causes': causes})
 
 def volunteer_list(request):
-    volunteers = Volunteer.objects.all()  # Fetch all volunteers from the database
-    return render(request, "volunteer_list.html", {"volunteers": volunteers})
+    # volunteers = Volunteer.objects.all()  # Fetch all volunteers from the database
+    # return render(request, "volunteer_list.html", {"volunteers": volunteers})
+    volunteers = Volunteer.objects.all()  # Get all volunteers
+    paginator = Paginator(volunteers, 2)  # Show 5 volunteers per page
+
+    page_number = request.GET.get('page')  # Get page number from URL
+    page_obj = paginator.get_page(page_number)  # Get the page object
+
+    return render(request, 'volunteer_list.html', {'page_obj': page_obj})
 
 
 def contact(request):
