@@ -27,7 +27,8 @@ class ContactMessage(models.Model):
 
 class Volunteer(models.Model):
     name = models.CharField(max_length=255)
-    email = models.EmailField(unique=True)
+    mobile_number = models.CharField(max_length=10)  # Mobile number (mandatory)
+    email = models.EmailField(blank=True, null=True)  # Make email optional
     message = models.TextField()
 
     def __str__(self):
