@@ -8,7 +8,7 @@
  
     <!-- END nav -->
     {% block content %}   
-    <div class="hero-wrap" style="background-image: url({% static 'images/bg_ind1.jpg' %});" data-stellar-background-ratio="0.5">
+    <div class="hero-wrap" style="background-image: url({% static 'images/bg_6.jpg' %});" data-stellar-background-ratio="0.5">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
@@ -24,24 +24,21 @@
     <section class="ftco-section bg-light">
       <div class="container">
         <div class="row">
-			{% for donor in donors %}
         	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">{{ donor.name }}</a></h3>
-        					<span class="position">{{ donor.created_at }}</span>
+        					<h3><a href="teacher-single.html">xyz</a></h3>
+        					<span class="position">Donated Just now</span>
         					<div class="text">
-		        				<p>Donated <span>${{ donor.amount }}</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>Donated <span>$0</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
         				</div>
         			</div>
         		</div>
         	</div>
-			{% endfor %}
-			
-        	{% comment %} <div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
+        	<div class="col-lg-4 d-flex mb-sm-4 ftco-animate">
         		<div class="staff">
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url({% static 'images/person_2.jpg' %});"></div>
@@ -152,30 +149,8 @@
         				</div>
         			</div>
         		</div>
-        	</div> {% endcomment %}
+        	</div>
         </div>
-
-		<!-- Pagination Controls -->
-		<div class="pagination-container text-center mt-4">
-			{% if donors.has_previous %}
-			  <a href="?page=1" class="btn btn-outline-primary">&laquo; First</a>
-			  <a href="?page={{ donors.previous_page_number }}" class="btn btn-outline-primary">&#60; Prev</a>
-			{% endif %}
-	
-			{% for num in donors.paginator.page_range %}
-			  {% if donors.number == num %}
-				<span class="btn btn-primary active">{{ num }}</span>
-			  {% else %}
-				<a href="?page={{ num }}" class="btn btn-outline-primary">{{ num }}</a>
-			  {% endif %}
-			{% endfor %}
-	
-			{% if donors.has_next %}
-			  <a href="?page={{ donors.next_page_number }}" class="btn btn-outline-primary">Next &#62;</a>
-			  <a href="?page={{ donors.paginator.num_pages }}" class="btn btn-outline-primary">Last &raquo;</a>
-			{% endif %}
-		  </div>
-		<br><br>
         <h2>Make a Donation</h2>
     
 		<form method="POST" action="{% url 'donate' %}">
@@ -186,7 +161,7 @@
 			<button type="submit">Donate</button>
 		</form>
 		
-		{% comment %} <h2>Recent Donations</h2>
+		<h2>Recent Donations</h2>
     <div>
         {% for donor in donors %}
             <p><strong>{{ donor.name }}</strong> donated <strong>${{ donor.amount }}</strong> at <strong> {{ donor.created_at }}</strong></p>
@@ -206,9 +181,9 @@
             <a href="?page={{ donors.next_page_number }}">&nbsp;&nbsp; Next &nbsp;&nbsp;</a>
             <a href="?page={{ donors.paginator.num_pages }}"> Last &raquo;</a>
         {% endif %}
-    </div> {% endcomment %}
+    </div>
 	
-        {% comment %} <div class="row mt-5">
+        <div class="row mt-5">
           <div class="col text-center">
             <div class="block-27">
               <ul>
@@ -222,8 +197,7 @@
               </ul>
             </div>
           </div>
-        </div> {% endcomment %}
-
+        </div>
       </div>
     </section>
 
@@ -240,9 +214,6 @@
             {% csrf_token %}
             <div class="form-group">
                 <input type="text" name="name" class="form-control" placeholder="Your Name" required>
-            </div>
-			<div class="form-group">
-                <input type="text" name="mobile_number" class="form-control" placeholder="Your Mobile Number" pattern="\d{10}" title="Enter exactly 10 digits" maxlength="10" required>
             </div>
             <div class="form-group">
                 <input type="email" name="email" class="form-control" placeholder="Your Email" required>
@@ -261,40 +232,5 @@
 
     {% endblock %}
     
-	<style>
-		/* Table Styling */
-		.table {
-		  width: 100%;
-		  border-collapse: collapse;
-		  font-size: 18px;
-		}
-		.table th {
-		  background-color: #f57c00;
-		  color: white;
-		  text-align: center;
-		}
-		.table td {
-		  text-align: center;
-		}
-		.table-hover tbody tr:hover {
-		  background-color: #fce4ec;
-		}
-  
-		/* Pagination Styling */
-		.pagination-container {
-		  display: flex;
-		  justify-content: center;
-		  gap: 5px;
-		}
-		.pagination-container .btn {
-		  border-radius: 50px;
-		  padding: 10px 15px;
-		  font-weight: bold;
-		}
-		.pagination-container .active {
-		  background-color: #f57c00;
-		  border-color: #f57c00;
-		}
-	  </style>
   </body>
 </html>

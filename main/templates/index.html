@@ -1,75 +1,22 @@
-<!DOCTYPE html>
+{% extends 'base.html' %}
 {% load static %}
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta name="description" content="Pranatah Foundation is dedicated to providing health and education to underprivileged students.">
-    <meta name="keywords" content="Pranatah Foundation, NGO, health, education, charity">
-    <meta name="robots" content="index, follow">
-    <title>Pranatah Foundation - Health and Education for Poor Students</title>
-    {% comment %} <title>Pranatah Foundation</title> {% endcomment %}
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
-    
-
-    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
-    
-    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
-    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
-
-    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
-    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
-
-    
-    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-  </head>
-  
   <body>
-    
-  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-    <div class="container">
-      <a class="navbar-brand" href="{% url 'home' %}">Pranatah Foundation</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="oi oi-menu"></span> Menu
-      </button>
 
-      <div class="collapse navbar-collapse" id="ftco-nav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="{% url 'causes' %}" class="nav-link">Causes</a></li>
-            <li class="nav-item"><a href="{% url 'donate' %}" class="nav-link">Donate</a></li>
-            <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
-            <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
-            <li class="nav-item"><a href="{% url 'event' %}" class="nav-link">Events</a></li>
-            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
-            <li class="nav-item"><a href="{% url 'volunteer_list' %}" class="nav-link">Our Volunteer</a></li>
-        </ul>
-    </div>
-    </div>
-  </nav>
     <!-- END nav -->
-    
-    <div class="hero-wrap" style="background-image: url({% static 'images/bg_7.jpg' %});" data-stellar-background-ratio="0.5">
+    {% block content %}   
+    <div class="hero-wrap" style="background-image: url({% static 'images/bg_ind2.jpg' %});" data-stellar-background-ratio="0.1">
       <div class="overlay"></div>
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
           <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Doing Nothing is Not An Option of Our Life</h1>
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Empowering Lives, Transforming Futures</h1>
+            {% comment %} <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Doing Nothing is Not An Option of Our Life</h1> {% endcomment %}
             {% comment %} <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by <a href="#">pranatah-foundation.onrender.com</a></p> {% endcomment %}
 
-            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://vimeo.com/45830194" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span>Watch Video</a></p>
+            {% comment %} <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://vimeo.com/45830194" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span>Watch Video</a></p> {% endcomment %}
           </div>
         </div>
       </div>
@@ -82,8 +29,8 @@
             <div class="block-18 color-1 align-items-stretch">
               <div class="text">
               	<span>Served Over</span>
-                <strong class="number" data-number="1432805">0</strong>
-                <span>Children in 190 countries in the world</span>
+                <strong class="number" data-number="0">0</strong>
+                <span>Children in India</span>
               </div>
             </div>
           </div>
@@ -91,7 +38,7 @@
             <div class="block-18 color-2 align-items-stretch">
               <div class="text">
               	<h3 class="mb-4">Donate Money</h3>
-              	<p>Even the all-powerful Pointing has no control about the blind texts.</p>
+              	<p>Your generosity has the power to transform lives. Every contribution helps provide education, healthcare, and support to those in need. </p>
               	<p><a href="{% url 'donate' %}" class="btn btn-white px-3 py-2 mt-2">Donate Now</a></p>
               </div>
             </div>
@@ -100,8 +47,8 @@
             <div class="block-18 color-3 align-items-stretch">
               <div class="text">
               	<h3 class="mb-4">Be a Volunteer</h3>
-              	<p>Even the all-powerful Pointing has no control about the blind texts.</p>
-              	<p><a href="#" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
+              	<p>Make a real impact by giving your time and skills. Join us in empowering communities through education, healthcare, and social initiatives. </p>
+              	<p><a href="{% url 'volunteer_register' %}" class="btn btn-white px-3 py-2 mt-2">Be A Volunteer</a></p>
               </div>
             </div>
           </div>
@@ -112,12 +59,83 @@
     <section class="ftco-section">
     	<div class="container">
     		<div class="row">
+				<div class="col-md-14 d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 d-flex services p-3 py-4 d-block">
+					<div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
+					<div class="media-body pl-4">
+						<h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">About Us:</span></h3>
+						<p>
+							{% comment %} <b>Invest in Hope</b><br> {% endcomment %}
+							Pranatah is a nonprofit organization that works to improve disadvantaged communities
+							across India's access to healthcare and education. Our goal is to develop community-driven, longlasting
+							solutions that uplift people and advance social justice. We work to empower neglected groups
+							and guarantee a healthier, better-educated future by emphasizing high-quality education and
+							necessary healthcare services.</p>
+					</div>
+					</div>      
+				</div>				
+        	</div>
+    		<div class="row">
+				<div class="col-md-14 d-flex align-self-stretch ftco-animate ">
+					<div class="media block-6 d-flex services p-3 py-4 d-block">
+						<div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
+						<div class="media-body pl-4">
+							<h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">Our Vision:</span></h3>
+							<p>
+								To construct an inclusive society in which everybody, irrespective of their financial
+								situation, have access to exceptional healthcare and education.</p>
+						</div>
+					</div>      
+				</div>				
+        	</div>
+    		<div class="row">
+				<div class="col-md-14 d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 d-flex services p-3 py-4 d-block" >
+					<div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
+					<div class="media-body pl-4">
+						<h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">Our Mission:</span></h3>
+						<p>
+							{% comment %} <b>Invest in Hope</b><br> {% endcomment %}
+							1. Education for All- Closing educational gaps by giving impoverished children and
+							young people resources, financial aid, and mentoring.<br>
+							2. Ensuring high-quality healthcare services for marginalized groups via medical camps, awareness
+							campaigns, and partnerships with medical professionals is known as accessible healthcare.<br>
+							3. Women & Child Welfare: Promoting and assisting women and children by means of targeted
+							initiatives that attend to their particular health and educational requirements.<br>
+							4. Promoting sustainable development projects that enable nearby communities to achieve selfsufficiency
+							is known as community development.</p>
+					</div>
+					</div>      
+				</div>				
+        	</div>
+    		<div class="row">
+				<div class="col-md-14 d-flex align-self-stretch ftco-animate">
+					<div class="media block-6 d-flex services p-3 py-4 d-block">
+					<div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
+					<div class="media-body pl-4">
+						<h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">How can you help us:</span></h3>
+						<p>
+							{% comment %} <b>Invest in Hope</b><br> {% endcomment %}
+							Pranatah believes in collective action and welcomes individuals, corporates,
+							and institutions to join us in our mission. You can contribute by:<br>
+							✔ Volunteering – Be a part of our projects and create an impact firsthand.<br>
+							✔ Donating – Every contribution helps in expanding our outreach and services.<br>
+							✔ Partnering with Us – Collaborate on programs, sponsorships, or CSR initiatives.</p>
+					</div>
+					</div>      
+				</div>				
+        	</div>
+
+    	</div>
+    	<div class="container">
+    		<div class="row">
           <div class="col-md-4 d-flex align-self-stretch ftco-animate">
             <div class="media block-6 d-flex services p-3 py-4 d-block">
               <div class="icon d-flex mb-3"><span class="flaticon-donation-1"></span></div>
               <div class="media-body pl-4">
-                <h3 class="heading">Make Donation</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">Make Donation</span></h3>
+                <p><b>Invest in Hope</b><br>
+					Every contribution, no matter the size, helps us provide quality education and healthcare to underprivileged children.</p>
               </div>
             </div>      
           </div>
@@ -125,8 +143,9 @@
             <div class="media block-6 d-flex services p-3 py-4 d-block">
               <div class="icon d-flex mb-3"><span class="flaticon-charity"></span></div>
               <div class="media-body pl-4">
-                <h3 class="heading">Become A Volunteer</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">Become A Volunteer</span></h3>
+                <p>Make a Difference<br>
+					Join our dedicated team of volunteers and help us create a brighter future for children in need.</p>
               </div>
             </div>      
           </div>
@@ -134,8 +153,9 @@
             <div class="media block-6 d-flex services p-3 py-4 d-block">
               <div class="icon d-flex mb-3"><span class="flaticon-donation"></span></div>
               <div class="media-body pl-4">
-                <h3 class="heading">Sponsorship</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading"><span style="color:rgb(255, 153, 0); font-weight: bold;">Sponsorship</span></h3>
+                <p>Partner with Us<br>
+					Invest in the future by partnering with Pranatah Foundation. Together, we can empower children and create a lasting impact.</p>
               </div>
             </div>    
           </div>
@@ -143,109 +163,200 @@
     	</div>
     </section>
 
+	{% comment %} <section class="ftco-section"> {% endcomment %}
+    	<div class="container">
+    		<div class="row d-flex">
+    			<div class="col-md-6 d-flex ftco-animate">
+    				<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<div class="img img-about align-self-stretch" 
+									 style="background-image: url({% static 'images/rupesh3.jpg' %}); height: 330px; width: 400px;">
+								</div>
+								<p style="display: flex; justify-content: left; padding-left: 100px;">Founder: Rupesh Kumar</p>
+							</div>							
+						</div>
+						<br>
+						<div class="row">
+							<div class="col-12">
+								<div class="img img-about align-self-stretch" 
+									style="background-image: url({% static 'images/prince.jpg' %}); height: 460px; width: 400px;">
+								</div>
+								<p style="display: flex; justify-content: left; padding-left: 100px;">Co-Founder: Adv. Abhishek Kumar Singh</p>
+							</div>
+						</div>
+					</div>				
+
+    			</div>
+
+    			<div class="col-md-6 pl-md-5 ftco-animate">
+    				<h2 class="mb-4"><span style="color:rgb(255, 153, 0); font-weight: bold;">Welcome from the Founder</span></h2>
+    				<p>our mission is to empower communities through education and health initiatives. By fostering knowledge and ensuring access to essential healthcare, we pave the way for brighter, healthier futures. Together, we can make a difference.</p>
+    				
+					<p>At Pranatah Foundation, our vision is simple yet profound: to empower underprivileged children through health and education. We believe that every child deserves the opportunity to thrive, regardless of their circumstances.  We invite you to join us in making this vision a reality.</p>
+					<p>
+						My journey to founding Pranatah Foundation began with a deep conviction: that we all have a responsibility to care for the most vulnerable among us.  Witnessing the challenges faced by underprivileged children ignited a fire within me to create positive change.  I believe that together, we can build a brighter future for these children.</p>
+						
+						<p>						
+						The work of Pranatah Foundation is not just about providing aid; it's about building hope.  Every contribution, every volunteer hour, every act of kindness creates ripples of change that transform lives.  Join us in making a lasting impact on the future of underprivileged children.</p>						
+						<p>						
+						I invite you to become a part of the Pranatah Foundation family.  Whether you choose to donate, volunteer, or simply spread awareness, your involvement is invaluable.  Together, we can empower underprivileged children to reach their full potential."</p>
+					
+					
+    			</div>
+    		</div>
+    	</div>
+    {% comment %} </section> {% endcomment %}
+
 
     <section class="ftco-section bg-light">
     	<div class="container-fluid">
     		<div class="row justify-content-center mb-5 pb-3">
-          <div class="col-md-5 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Our Causes</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          </div>
-        </div>
+          		<div class="col-md-5 heading-section ftco-animate text-center">
+            		<h2 class="mb-4"><span style="color:rgb(255, 153, 0); font-weight: bold;">Meet Our Members</span></h2>
+            			<p>Our dedicated team is committed to making a difference in the lives of those in need. With a shared vision for education and healthcare, our members work tirelessly to uplift underprivileged communities and create lasting change.</p>
+          		</div>
+        	</div>
     		<div class="row">
     			<div class="col-md-12 ftco-animate">
     				<div class="carousel-cause owl-carousel">
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url({% static 'images/cause-1.jpg' %});"></a>
+		    					<a href="#" class="img" style="background-image: url({% static 'images/suren4.jpg' %});"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
+		    						<h3><a href="#">Surendra Kumar</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
+
+						{% comment %} first record {% endcomment %}
+
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url({% static 'images/cause-2.jpg' %});"></a>
+		    					<a href="#" class="img" style="background-image: url({% static 'images/abhishek_saini.jpg' %});"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
+		    						<h3><a href="#">Adv. Abhishek Saini</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url({% static 'images/cause-3.jpg' %});"></a>
+		    					<a href="#" class="img" style="background-image: url({% static 'images/ram_manu2.jpg' %});"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
+		    						<h3><a href="#">Adv. Ram Manu Dixit</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url({% static 'images/cause-4.jpg' %});"></a>
+		    					<a href="#" class="img" style="background-image: url({% static 'images/ananya.jpg' %});"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
+		    						<h3><a href="#">Ananya Anandita Patnaik</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Pranatah Foundation</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
 	    				<div class="item">
 	    					<div class="cause-entry">
-		    					<a href="#" class="img" style="background-image: url({% static 'images/cause-5.jpg' %});"></a>
+		    					<a href="#" class="img" style="background-image: url({% static 'images/bharti.jpg' %});"></a>
 		    					<div class="text p-3 p-md-4">
-		    						<h3><a href="#">Clean water for the urban area</a></h3>
-		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
-		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
-		    					</div>
-		    				</div>
-	    				</div>
+		    						<h3><a href="#">Bharti Roy</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
 	    				<div class="item">
+	    					<div class="cause-entry">
+		    					<a href="#" class="img" style="background-image: url({% static 'images/wakil.jpg' %});"></a>
+		    					<div class="text p-3 p-md-4">
+		    						<h3><a href="#">Adv. Abhishek Kumar</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
+	    				<div class="item">
+	    					<div class="cause-entry">
+		    					<a href="#" class="img" style="background-image: url({% static 'images/priyankar.jpg' %});"></a>
+		    					<div class="text p-3 p-md-4">
+		    						<h3><a href="#">Priyanka Rahul</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
+	    				<div class="item">
+	    					<div class="cause-entry">
+		    					<a href="#" class="img" style="background-image: url({% static 'images/preetis.jpg' %});"></a>
+		    					<div class="text p-3 p-md-4">
+		    						<h3><a href="#">Dr. Preeti Sharma</a></h3>
+		    						<p>Executive Member</p>
+		    						{% comment %} <span class="donation-time mb-3 d-block">Last donation 1w ago</span> {% endcomment %}
+									{% comment %} <div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div> {% endcomment %}
+									{% comment %} <span class="fund-raised d-block">$0 raised of $0</span> {% endcomment %}
+								</div>
+							</div>
+						</div>
+
+						{% comment %} <div class="item">
 	    					<div class="cause-entry">
 		    					<a href="#" class="img" style="background-image: url({% static 'images/cause-6.jpg' %});"></a>
 		    					<div class="text p-3 p-md-4">
 		    						<h3><a href="#">Clean water for the urban area</a></h3>
 		    						<p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life</p>
 		    						<span class="donation-time mb-3 d-block">Last donation 1w ago</span>
-		                <div class="progress custom-progress-success">
-		                  <div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
-		                </div>
-		                <span class="fund-raised d-block">$12,000 raised of $30,000</span>
+									<div class="progress custom-progress-success">
+										<div class="progress-bar bg-primary" role="progressbar" style="width: 28%" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+									<span class="fund-raised d-block">$0 raised of $0</span>
 		    					</div>
 		    				</div>
-	    				</div>
+	    				</div> {% endcomment %}
     				</div>
     			</div>
     		</div>
     	</div>
     </section>
 
-    <section class="ftco-section">
+    {% comment %} <section class="ftco-section">
       <div class="container">
       	<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
@@ -259,10 +370,10 @@
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url({% static 'images/person_1.jpg' %});"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
+        					<h3><a href="teacher-single.html">xyz</a></h3>
         					<span class="position">Donated Just now</span>
         					<div class="text">
-		        				<p>Donated <span>$300</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>Donated <span>$0</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
         				</div>
         			</div>
@@ -273,10 +384,10 @@
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url({% static 'images/person_2.jpg' %});"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
+        					<h3><a href="teacher-single.html">xyz</a></h3>
         					<span class="position">Donated Just now</span>
         					<div class="text">
-		        				<p>Donated <span>$150</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>Donated <span>$0</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
         				</div>
         			</div>
@@ -287,10 +398,10 @@
         			<div class="d-flex mb-4">
         				<div class="img" style="background-image: url({% static 'images/person_3.jpg' %});"></div>
         				<div class="info ml-4">
-        					<h3><a href="teacher-single.html">Ivan Jacobson</a></h3>
+        					<h3><a href="teacher-single.html">xyz</a></h3>
         					<span class="position">Donated Just now</span>
         					<div class="text">
-		        				<p>Donated <span>$250</span> for <a href="#">Children Needs Food</a></p>
+		        				<p>Donated <span>$0</span> for <a href="#">Children Needs Food</a></p>
 		        			</div>
         				</div>
         			</div>
@@ -298,21 +409,21 @@
         	</div>
         </div>
       </div>
-    </section>
+    </section> {% endcomment %}
 
     <section class="ftco-gallery">
     	<div class="d-md-flex">
-	    	<a href="{% static 'images/cause-2.jpg' %}" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url({% static 'images/cause-2.jpg' %});">
+	    	<a href="{% static 'images/suren1.jpg' %}" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url({% static 'images/suren1.jpg' %});">
 	    		<div class="icon d-flex justify-content-center align-items-center">
 	    			<span class="icon-search"></span>
 	    		</div>
 	    	</a>
-	    	<a href="{% static 'images/cause-3.jpg' %}" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url({% static 'images/cause-3.jpg' %});">
+	    	<a href="{% static 'images/suren2.jpg' %}" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url({% static 'images/suren2.jpg' %});">
 	    		<div class="icon d-flex justify-content-center align-items-center">
 	    			<span class="icon-search"></span>
 	    		</div>
 	    	</a>
-	    	<a href="{% static 'images/cause-4.jpg' %}" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url({% static 'images/cause-4.jpg' %});">
+	    	<a href="{% static 'images/slate1.jpg' %}" class="gallery image-popup d-flex justify-content-center align-items-center img ftco-animate" style="background-image: url({% static 'images/slate1.jpg' %});">
 	    		<div class="icon d-flex justify-content-center align-items-center">
 	    			<span class="icon-search"></span>
 	    		</div>
@@ -351,8 +462,8 @@
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Recent from blog</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <h2 class="mb-4"><span style="color:rgb(255, 153, 0); font-weight: bold;">Recent from blog</span></h2>
+            <p>Stay updated with our latest stories, insights, and impact reports. Explore inspiring journeys, community initiatives, and the change we’re making together!</p>
           </div>
         </div>
         <div class="row d-flex">
@@ -409,7 +520,7 @@
       <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
-            <h2 class="mb-4">Our Latest Events</h2>
+            <h2 class="mb-4"><span style="color:rgb(255, 153, 0); font-weight: bold;">Our Latest Events</span></h2>
           </div>
         </div>
         <div class="row">
@@ -477,136 +588,31 @@
     		</div>
     		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
     			<h3 class="mb-3">Be a volunteer</h3>
-    			<form action="#" class="volunter-form">
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Email">
-            </div>
-            <div class="form-group">
-              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Message"></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
-            </div>
-          </form>
+				<form action="{% url 'volunteer_form' %}" method="post">
+					{% csrf_token %}
+					<div class="form-group">
+						<input type="text" name="name" class="form-control" placeholder="Your Name" required>
+					</div>
+					<div class="form-group">
+						<input type="text" name="mobile_number" class="form-control" placeholder="Your Mobile Number" pattern="\d{10}" title="Enter exactly 10 digits" maxlength="10" required>
+					</div>
+					<div class="form-group">
+						<input type="email" name="email" class="form-control" placeholder="Your Email" required>
+					</div>
+					<div class="form-group">
+						<textarea name="message" cols="30" rows="3" class="form-control" placeholder="Message" required></textarea>
+					</div>
+					<div class="form-group">
+						<input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
+					</div>
+				</form>
     		</div>    			
     		</div>
     	</div>
     </section>
 
-    <footer class="ftco-footer ftco-section img">
-    	<div class="overlay"></div>
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">About Us</h2>
-              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url({% static 'images/image_1.jpg' %});"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-              <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url({% static 'images/image_2.jpg' %});"></a>
-                <div class="text">
-                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
-                  <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
-                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-2">
-             <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Site Links</h2>
-              <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Home</a></li>
-                <li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>
-                <li><a href="{% url 'donate' %}" class="py-2 d-block">Donate</a></li>
-                <li><a href="{% url 'causes' %}" class="py-2 d-block">Causes</a></li>
-                <li><a href="{% url 'event' %}" class="py-2 d-block">Event</a></li>
-                <li><a href="{% url 'blog' %}" class="py-2 d-block">Blog</a></li>
+    {% endblock %}
 
-                {% comment %} <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
-                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="{% url 'causes' %}" class="nav-link">Causes</a></li>
-                <li class="nav-item"><a href="{% url 'donate' %}" class="nav-link">Donate</a></li>
-                <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
-                <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
-                <li class="nav-item"><a href="{% url 'event' %}" class="nav-link">Events</a></li>
-                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li> {% endcomment %}
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="ftco-footer-widget mb-4">
-            	<h2 class="ftco-heading-2">Have a Questions?</h2>
-            	<div class="block-23 mb-3">
-	              <ul>
-	                <li><span class="icon icon-map-marker"></span><span class="text">Flat no UGF 03 Upper Ground Floor SLF Ved Vihar loni, Ved Vihar, Ghaziabad, Uttar Pradesh 201102</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9821333194</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@pranatah-foundation.onrender.com</span></a></li>
-	              </ul>
-	            </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12 text-center">
-
-            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  <a href="https://pranatah-foundation.onrender.com" target="_blank">Pranatah Foundation</a>
-  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-  
-
-  <!-- loader -->
-  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
-
-  <script src="{% static 'js/jquery.min.js' %}"></script>
-  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
-  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
-  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
-  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
-  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-  <script src="{% static 'js/aos.js' %}"></script>
-  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
-  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
-  <script src="{% static 'js/scrollax.min.js' %}"></script>
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-  <script src="{% static 'js/google-map.js' %}"></script>
-  <script src="{% static 'js/main.js' %}"></script>
     
   </body>
 </html>

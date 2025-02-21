@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+  <body>
+
+    <!-- END nav -->
+    
+
+    {% block content %} 
+    
+      <!-- Bootstrap 4.1 Modal -->
+      <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content" style="max-width: 500px; margin: auto;">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="successModalLabel">Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        <strong>Message!</strong> 
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap 4.1 JS (Ensure jQuery & Popper.js are included) -->
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+
+      <!-- JavaScript to Auto-Show & Properly Close the Modal -->
+      {% if messages %}
+      <script>
+        $(document).ready(function() {
+            $("#successModal").modal("show"); // Auto-show modal
+
+            // Ensure modal closes properly when clicking "X" or "OK"
+            $(".close, .btn-primary").click(function() {
+                $("#successModal").modal("hide");
+            });
+        });
+      </script>
+      {% endif %}
+
+
+
+
+    {% comment %} End of success message {% endcomment %}
+     
+    <div class="hero-wrap" style="background-image: url({% static 'images/bg_ind1.jpg' %});" data-stellar-background-ratio="0.5">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-7 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Doing Nothing is Not An Option of Our Life</h1>
+            {% comment %} <p class="mb-5" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Created by <a href="#">pranatah-foundation.onrender.com</a></p> {% endcomment %}
+
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="https://vimeo.com/45830194" class="btn btn-white btn-outline-white px-4 py-3 popup-vimeo"><span class="icon-play mr-2"></span>Watch Video</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <section class="ftco-section-3 img" style="background-image: url({% static 'images/bg_3.jpg' %});">
+    	<div class="overlay"></div>
+    	<div class="container">
+    		<div class="row d-md-flex">
+    		<div class="col-md-6 d-flex ftco-animate">
+    			<div class="img img-2 align-self-stretch" style="background-image: url({% static 'images/bg_4.jpg' %});"></div>
+    		</div>
+
+        
+
+    		<div class="col-md-6 volunteer pl-md-5 ftco-animate">
+    			<h3 class="mb-3">Be a volunteer</h3>
+    	<form action="{% url 'volunteer_form' %}" method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+            </div>
+            <div class="form-group">
+                <input type="text" name="mobile_number" class="form-control" placeholder="Your Mobile Number" pattern="\d{10}" title="Enter exactly 10 digits" maxlength="10" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <div class="form-group">
+                <textarea name="message" cols="30" rows="3" class="form-control" placeholder="Message" required></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Send Message" class="btn btn-white py-3 px-5">
+            </div>
+        </form>
+    		</div>    			
+    		</div>
+    	</div>
+    </section>
+    <br><br><br><br>
+
+    {% endblock %}
+
+    
+</body>
+</html>

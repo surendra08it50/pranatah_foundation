@@ -1,25 +1,221 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta name="description" content="Pranatah Foundation is dedicated to providing health and education to underprivileged students.">
     <meta name="keywords" content="Pranatah Foundation, NGO, health, education, charity">
     <meta name="robots" content="index, follow">
     <title>Pranatah Foundation - Health and Education for Poor Students</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pranatah NGO</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
-<body>
-    <nav>
-        <a href="{% url 'home' %}">Home</a>
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'causes' %}">Causes</a>
-        <a href="{% url 'donate' %}">Donate</a>
-        <a href="{% url 'contact' %}">Contact</a>
-    </nav>
+    {% comment %} <title>Pranatah Foundation</title> {% endcomment %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Overpass:300,400,400i,600,700" rel="stylesheet">
 
+
+    {% comment %} <!-- Latest Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> {% endcomment %}
+    
+    {% comment %} <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script> {% endcomment %}
+
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {% comment %} <style>
+      .dropdown:hover .dropdown-menu {
+          display: none !important; /* Prevent dropdown from opening on hover */
+      }
+      .dropdown-menu.show {
+          display: block !important; /* Ensure dropdown opens only on click */
+      }
+    </style> {% endcomment %}
+
+  </head>
+  
+  <body>
+    
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container">
+      <a class="navbar-brand" href="{% url 'home' %}">Pranatah(प्रणत:) Foundation</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span>Menu
+      </button>
+
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item {% if request.path == '/' %}active{% endif %}"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+            <li class="nav-item {% if request.path == '/about/' %}active{% endif %}"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+            {% comment %} <li class="nav-item {% if request.path == '/causes/' %}active{% endif %}"><a href="{% url 'causes' %}" class="nav-link">Causes</a></li> {% endcomment %}
+            <li class="nav-item {% if request.path == '/volunteer_register/' %}active{% endif %}"><a href="{% url 'volunteer_register' %}" class="nav-link">Be Volunteer</a></li>
+            <li class="nav-item {% if request.path == '/donate/' %}active{% endif %}"><a href="{% url 'donate' %}" class="nav-link">Donate</a></li>
+            <li class="nav-item {% if request.path == '/blog/' %}active{% endif %}"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+            <li class="nav-item {% if request.path == '/gallery/' %}active{% endif %}"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+            <li class="nav-item {% if request.path == '/event/' %}active{% endif %}"><a href="{% url 'event' %}" class="nav-link">Events</a></li>
+            <li class="nav-item {% if request.path == '/volunteer_list/' %}active{% endif %}"><a href="{% url 'volunteer_list' %}" class="nav-link">Our Volunteer</a></li>
+            {% comment %} <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Volunteer</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'volunteer_list' %}">Our Volunteer</a>
+                <a class="dropdown-item" href="{% url 'volunteer_register' %}">Be Volunteer</a>                
+              </div>
+            </li> {% endcomment %}
+            
+            <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+
+            
+        </ul>
+    </div>
+    </div>
+  </nav>
+    <!-- END nav -->
+    
     {% block content %}
+
     {% endblock %}
-</body>
+
+
+    <footer class="ftco-footer ftco-section img">
+    	<div class="overlay"></div>
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">About Us</h2>
+              <p>We are dedicated to transforming lives through access to quality education and healthcare. Our mission is to uplift underprivileged communities and create a future filled with hope, equality, and opportunity.</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
+                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/image_1.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/image_2.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> July 12, 2018</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-2">
+             <div class="ftco-footer-widget mb-4 ml-md-4">
+              <h2 class="ftco-heading-2">Site Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">Home</a></li>
+                <li><a href="{% url 'about' %}" class="py-2 d-block">About</a></li>
+                <li><a href="{% url 'donate' %}" class="py-2 d-block">Donate</a></li>
+                <li><a href="{% url 'volunteer_register' %}" class="py-2 d-block">Be Volunteer</a></li>
+                <li><a href="{% url 'event' %}" class="py-2 d-block">Event</a></li>
+                <li><a href="{% url 'blog' %}" class="py-2 d-block">Blog</a></li>
+
+                {% comment %} <li class="nav-item active"><a href="{% url 'home' %}" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{% url 'causes' %}" class="nav-link">Causes</a></li>
+                <li class="nav-item"><a href="{% url 'donate' %}" class="nav-link">Donate</a></li>
+                <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+                <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+                <li class="nav-item"><a href="{% url 'event' %}" class="nav-link">Events</a></li>
+                <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li> {% endcomment %}
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Have a Questions?</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Flat no UGF 03 Upper Ground Floor SLF Ved Vihar loni, Ved Vihar, Ghaziabad, Uttar Pradesh 201102</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+91 9821333194</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@pranatah-foundation.onrender.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |  <a href="https://pranatah-foundation.onrender.com" target="_blank">Pranatah Foundation</a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+  {% comment %} <!-- jQuery (Required for Bootstrap 4) -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> {% endcomment %}
+
+  {% comment %} <!-- Popper.js (Required for Bootstrap 4 dropdowns) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script> {% endcomment %}
+
+  <!-- Bootstrap 4 JS -->
+  {% comment %} <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"></script> {% endcomment %}
+
+
+    
+  </body>
 </html>
